@@ -1,0 +1,26 @@
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Local environment and runtime artifacts
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+coverage/
+*.log
+
+# Raw archive files are kept locally after extraction.
+references/raw/zip/**
+!references/raw/zip/
+!references/raw/zip/.gitkeep
+!references/raw/zip/exports/
+!references/raw/zip/exports/.gitkeep
+!references/raw/zip/attachments/
+!references/raw/zip/attachments/.gitkeep
+references/raw/**/*.zip
+
+# Contains a live-looking MongoDB connection string in the 11th cohort export.
+references/raw/notion/20.자바스크립트 백엔드 개발 시작하기/20 자바스크립트 백엔드 개발 시작하기 2d12eda401c180fc9b5cffbf20ae79ea.md
