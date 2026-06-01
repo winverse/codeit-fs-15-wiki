@@ -1,0 +1,63 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 80px;
+}
+
+.title {
+  color: #12172a;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 35px;
+  margin: 0 0 8px;
+}
+
+.description {
+  color: #818181;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+  margin: 0;
+}
+
+.book {
+  background: #f4f5f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(18, 23, 42, 0.03);
+  margin: 64px 0;
+  padding: 24px 48px;
+}
+
+.book-container {
+  margin: 0 auto;
+  width: 324px;
+}
+
+.thumb {
+  border: 2px solid #595d6d;
+  border-radius: 4px;
+  filter: drop-shadow(0px 4px 23px rgba(16, 20, 32, 0.1));
+  margin-top: -56px;
+  width: 128px;
+}
+
+.book-description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.book-info {
+  background-color: #000000;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+  margin: 24px 0;
+  padding: 12px 32px;
+  text-align: center;
+}
+
+.date {
+  font-weight: 700;
+}

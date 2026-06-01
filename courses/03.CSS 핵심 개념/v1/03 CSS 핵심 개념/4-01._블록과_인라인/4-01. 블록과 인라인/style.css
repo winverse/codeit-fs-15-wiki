@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 80px 140px;
+}
+
+h1 {
+  border-bottom: 1px solid #e3e3e3;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 41px;
+  margin-bottom: 32px;
+  padding: 16px 0;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 29px;
+  margin: 12px 0;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.figure {
+  width: 280px;
+}
+
+.read-more {
+  background: #528d9f;
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+}
