@@ -13,14 +13,16 @@
 - 수업 문서
 - 실습 가이드
 - 퀴즈와 해설
-- 문서 작성 규칙과 템플릿
+- 강의자료 개선 기준
 
 작성 기준:
 
-- [11기 자료 기반 15기 강의자료 제작 기준](./docs/00.%20문서%20운영/11기%20자료%20기반%2015기%20강의자료%20제작%20기준.md)을 먼저 확인합니다.
+- [15기 강의자료 개선 기준](./docs/00.%20문서%20운영/15기%20강의자료%20개선%20기준.md)을 먼저 확인합니다.
 - 15기 강의 순서와 과정 제목은 `references/raw/notion`의 `NN.제목` 폴더명을 그대로 따릅니다.
-- 내부 설명, 예제, 실습, 코드, 버전 안내만 15기 기준으로 개선합니다.
-- 11기 참고 코드는 `references/code/codeit-fs-11/`에 둡니다. 원본은 `https://github.com/winverse/codeit-fs.git`의 `codeit-fs-11/`입니다.
+- 내부 내용은 퀴즈, 문장, 코드와 실습 중심으로 개선합니다.
+- 실습 코드는 `references/code/*`를 기준으로 확인합니다. 11기 참고 코드는 `references/code/codeit-fs-11/`에 둡니다.
+- Notion 업로드용 Markdown은 원본 문서 작성이 끝난 뒤에만 만듭니다.
+- Notion 변환이 필요하면 로컬 스킬 `$notion-formatter`를 사용합니다. 원본 `docs` 문서를 source of truth로 두고, `_notion.md`는 업로드용 파생본으로만 취급합니다.
 
 ## 02. references
 
@@ -39,7 +41,7 @@
 - [raw/notion](./references/raw/notion): Notion export zip을 해제한 자료
 - [raw/zip](./references/raw/zip): 원본 zip과 첨부 zip을 모아둔 보관 폴더
 - `raw/pdf`: 별도 PDF 원본이 생기면 추가할 위치
-- [code](./references/code): 이전 기수 참고 코드. 11기 코드는 `references/code/codeit-fs-11/`
+- [code](./references/code): 이전 기수 코드와 사용자가 추가한 실습 코드. 11기 코드는 `references/code/codeit-fs-11/`
 
 ## 정리 원칙
 
@@ -50,6 +52,7 @@
 - Notion export 안의 첨부 zip은 원본 zip 옆에 같은 이름의 폴더로 해제합니다.
 - 해제 후 zip 파일은 `references/raw/zip` 아래로 모읍니다.
 - PDF 원본이 별도로 필요하면 `references/raw/pdf` 아래에 둡니다.
-- 제가 `references/raw`의 PDF와 Markdown을 읽고, 필요한 내용을 분류한 뒤 `docs`에 15기용 강의 자료로 정리합니다.
-- 이전 기수 자료를 그대로 복사해 쓰기보다, 15기 기준으로 수정한 결과물을 `docs`에 작성합니다.
+- 제가 `references/raw`의 PDF와 Markdown, `references/code/*`의 실습 코드를 읽고 15기용 강의 자료로 정리합니다.
+- 이전 기수 자료를 그대로 복사해 쓰기보다, 퀴즈, 문장, 코드와 실습을 15기 기준으로 개선한 결과물을 `docs`에 작성합니다.
+- Notion 업로드가 필요해지면 `docs` 원본을 먼저 확정한 뒤 `$notion-formatter`로 `_notion.md`를 생성합니다.
 - 버전이나 정책이 바뀔 수 있는 내용은 최종 문서 작성 전에 다시 확인합니다.
