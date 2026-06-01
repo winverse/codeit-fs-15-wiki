@@ -1,0 +1,36 @@
+<svg width="860" height="320" viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif; fill: #222; }
+    .title { font-size: 22px; font-weight: 700; }
+    .desc { font-size: 13px; fill: #555; }
+    .label { font-size: 16px; font-weight: 700; }
+    .body { font-size: 13px; }
+    .note { font-size: 12px; fill: #666; }
+  </style>
+
+  <rect width="860" height="320" fill="#fff"/>
+  <text x="36" y="40" class="title">기본 타입과 리터럴 타입</text>
+  <text x="36" y="64" class="desc">리터럴 타입은 기본 타입 집합 안의 값 하나를 정확히 가리키는 더 작은 집합입니다.</text>
+
+  <g transform="translate(52 100)">
+    <rect x="0" y="0" width="330" height="170" rx="18" fill="none" stroke="#222" stroke-width="1.8"/>
+    <text x="165" y="34" text-anchor="middle" class="label">number</text>
+    <text x="165" y="56" text-anchor="middle" class="note">숫자 값을 허용하는 큰 집합</text>
+
+    <rect x="106" y="78" width="118" height="46" rx="12" fill="none" stroke="#222" stroke-width="1.6"/>
+    <text x="165" y="107" text-anchor="middle" class="body">129_000</text>
+
+    <text x="165" y="146" text-anchor="middle" class="note">129_000 ⊂ number</text>
+  </g>
+
+  <g transform="translate(478 100)">
+    <rect x="0" y="0" width="330" height="170" rx="18" fill="none" stroke="#222" stroke-width="1.8"/>
+    <text x="165" y="34" text-anchor="middle" class="label">string</text>
+    <text x="165" y="56" text-anchor="middle" class="note">문자열 값을 허용하는 큰 집합</text>
+
+    <rect x="128" y="78" width="74" height="46" rx="12" fill="none" stroke="#222" stroke-width="1.6"/>
+    <text x="165" y="107" text-anchor="middle" class="body">'M'</text>
+
+    <text x="165" y="146" text-anchor="middle" class="note">'M' ⊂ string</text>
+  </g>
+</svg>

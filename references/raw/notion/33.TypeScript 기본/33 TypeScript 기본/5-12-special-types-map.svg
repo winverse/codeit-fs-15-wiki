@@ -1,0 +1,46 @@
+<svg width="860" height="320" viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif; fill: #222; }
+    .title { font-size: 22px; font-weight: 700; }
+    .desc { font-size: 13px; fill: #555; }
+    .label { font-size: 16px; font-weight: 700; }
+    .body { font-size: 13px; }
+    .note { font-size: 12px; fill: #666; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect width="860" height="320" fill="#fff"/>
+  <text x="36" y="40" class="title">unknown과 never는 경계를, any는 예외를 보여 줍니다</text>
+  <text x="36" y="64" class="desc">unknown은 가장 넓은 경계, never는 공집합, any는 타입 검사를 우회하는 특수 타입입니다.</text>
+
+  <rect x="92" y="100" width="676" height="54" rx="14" fill="none" stroke="#222" stroke-width="1.8"/>
+  <text x="430" y="123" text-anchor="middle" class="label">unknown</text>
+  <text x="430" y="143" text-anchor="middle" class="note">어떤 값이 와도 담을 수 있는 가장 넓은 타입</text>
+
+  <rect x="116" y="196" width="110" height="40" rx="12" fill="none" stroke="#222" stroke-width="1.4"/>
+  <rect x="256" y="196" width="110" height="40" rx="12" fill="none" stroke="#222" stroke-width="1.4"/>
+  <rect x="396" y="196" width="110" height="40" rx="12" fill="none" stroke="#222" stroke-width="1.4"/>
+  <rect x="536" y="196" width="110" height="40" rx="12" fill="none" stroke="#222" stroke-width="1.4"/>
+  <text x="171" y="221" text-anchor="middle" class="body">string</text>
+  <text x="311" y="221" text-anchor="middle" class="body">number</text>
+  <text x="451" y="221" text-anchor="middle" class="body">boolean</text>
+  <text x="591" y="221" text-anchor="middle" class="body">object</text>
+
+  <line x1="171" y1="196" x2="260" y2="154" stroke="#555" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="311" y1="196" x2="360" y2="154" stroke="#555" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="451" y1="196" x2="430" y2="154" stroke="#555" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="591" y1="196" x2="500" y2="154" stroke="#555" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <circle cx="738" cy="216" r="28" fill="none" stroke="#222" stroke-width="1.8"/>
+  <text x="738" y="212" text-anchor="middle" class="label">never</text>
+  <text x="738" y="231" text-anchor="middle" class="note">∅</text>
+
+  <rect x="610" y="248" width="220" height="54" rx="12" fill="none" stroke="#222" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="720" y="268" text-anchor="middle" class="label">any</text>
+  <text x="720" y="285" text-anchor="middle" class="note">집합의 크기보다</text>
+  <text x="720" y="299" text-anchor="middle" class="note">타입 검사 우회에 가깝습니다</text>
+</svg>

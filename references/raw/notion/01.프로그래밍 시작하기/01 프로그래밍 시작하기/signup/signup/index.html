@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="register-form" name="register">
+      <h1 class="register-title">회원가입</h1>
+      <div id="email-field">
+        <label for="email"> 이메일 </label>
+        <input id="email" name="email" type="email" placeholder="이메일" />
+        <div class="error-message"></div>
+      </div>
+      <div id="password-field">
+        <label for="password"> 비밀번호 </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="비밀번호"
+        />
+        <input
+          name="password-repeat"
+          type="password"
+          placeholder="비밀번호 확인"
+        />
+        <div class="error-message"></div>
+      </div>
+      <button type="submit">가입하기</button>
+      <div class="login-message">
+        이미 회원이신가요? <a href="/login">로그인</a>
+      </div>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
