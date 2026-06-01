@@ -10,7 +10,7 @@
 
 - 15기에서 실제로 사용할 강의 자료
 - 커리큘럼 정리본
-- 학생용 문서
+- 수업 문서
 - 실습 가이드
 - 퀴즈와 해설
 - 문서 작성 규칙과 템플릿
@@ -20,7 +20,7 @@
 - [11기 자료 기반 15기 강의자료 제작 기준](./docs/00.%20문서%20운영/11기%20자료%20기반%2015기%20강의자료%20제작%20기준.md)을 먼저 확인합니다.
 - 15기 강의 순서와 과정 제목은 `references/raw/notion`의 `NN.제목` 폴더명을 그대로 따릅니다.
 - 내부 설명, 예제, 실습, 코드, 버전 안내만 15기 기준으로 개선합니다.
-- 11기 코드 참고 저장소는 `https://github.com/winverse/codeit-fs.git`의 `codeit-fs-11/`입니다.
+- 11기 참고 코드는 `references/code/codeit-fs-11/`에 둡니다. 원본은 `https://github.com/winverse/codeit-fs.git`의 `codeit-fs-11/`입니다.
 
 ## 02. references
 
@@ -39,6 +39,7 @@
 - [raw/notion](./references/raw/notion): Notion export zip을 해제한 자료
 - [raw/zip](./references/raw/zip): 원본 zip과 첨부 zip을 모아둔 보관 폴더
 - `raw/pdf`: 별도 PDF 원본이 생기면 추가할 위치
+- [code](./references/code): 이전 기수 참고 코드. 11기 코드는 `references/code/codeit-fs-11/`
 
 ## 정리 원칙
 

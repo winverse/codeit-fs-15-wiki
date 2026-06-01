@@ -1,0 +1,4 @@
+config:
+  aws:region:
+  aws-foundations-ec2:myIpCidr:
+  aws-foundations-ec2:s3BucketArn:

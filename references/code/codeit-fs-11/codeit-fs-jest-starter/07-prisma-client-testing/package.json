@@ -1,0 +1,51 @@
+{
+  "name": "@express-test/07-prisma-client-testing",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#generated/prisma/client.js": {
+      "types": "./generated/prisma/client.ts",
+      "default": "./dist/generated/prisma/client.js"
+    },
+    "#src/*.js": {
+      "types": "./src/*.ts",
+      "default": "./dist/src/*.js"
+    },
+    "#test/*.js": {
+      "types": "./test/*.ts",
+      "default": "./dist/test/*.js"
+    }
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "@prisma/adapter-better-sqlite3": "^7.8.0",
+    "@prisma/client": "^7.8.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@jest/globals": "^30.3.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.6.0",
+    "cross-env": "^10.1.0",
+    "dotenv-cli": "^11.0.0",
+    "eslint": "^10.2.1",
+    "jest": "^30.3.0",
+    "jest-mock-extended": "^4.0.1",
+    "prettier": "^3.8.3",
+    "prisma": "^7.8.0",
+    "ts-jest": "^29.4.9",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.0"
+  },
+  "scripts": {
+    "prisma:generate": "pnpm exec dotenv -e ./.env -- prisma generate",
+    "build": "pnpm run prisma:generate && tsc -p ./tsconfig.json",
+    "test": "pnpm run prisma:generate && cross-env NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.mjs --runInBand",
+    "test:cov": "pnpm run prisma:generate && cross-env NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.mjs --coverage --runInBand",
+    "test:watch": "pnpm run prisma:generate && cross-env NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.mjs --watch",
+    "typecheck": "pnpm run prisma:generate && tsc -p ./tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  }
+}

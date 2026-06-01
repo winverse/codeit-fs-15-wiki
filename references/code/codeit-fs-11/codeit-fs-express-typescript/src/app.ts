@@ -1,0 +1,32 @@
+import express, { type Express } from 'express';
+import { errorHandler } from '#middlewares';
+import type { Controller } from '#controllers';
+
+export class App {
+  public readonly app: Express;
+
+  constructor(controller: Controller) {
+    this.app = express();
+    this.middleware();
+    this.routes(controller);
+    this.errorHandling();
+  }
+
+  private middleware() {
+    this.app.use(express.json());
+  }
+
+  private routes(controller: Controller) {
+    this.app.use('/api', controller.routes());
+  }
+
+  private errorHandling() {
+    this.app.use(errorHandler);
+  }
+
+  listen(port: number) {
+    return this.app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+  }
+}

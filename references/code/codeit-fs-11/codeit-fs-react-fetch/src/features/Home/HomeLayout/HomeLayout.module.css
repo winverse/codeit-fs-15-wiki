@@ -1,0 +1,42 @@
+.HomePage {
+  max-width: 1300px;
+  margin: 2rem auto;
+  padding: 2rem;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+}
+
+.toggleFormButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto 2rem auto;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color var(--transition-speed) ease-in-out;
+  box-shadow: var(--shadow-md);
+
+  &:hover {
+    background-color: var(--primary-color-hover);
+  }
+}
+
+.totalLengthText {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--subtle-text-color);
+  font-style: italic;
+}

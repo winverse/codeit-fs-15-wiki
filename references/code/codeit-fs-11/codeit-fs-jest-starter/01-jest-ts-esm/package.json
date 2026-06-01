@@ -1,0 +1,26 @@
+{
+  "name": "@express-test/01-jest-ts-esm",
+  "private": true,
+  "version": "1.0.0",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.1",
+    "prettier": "^3.8.3",
+    "typescript-eslint": "^8.59.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "imports": {
+    "#src/*.js": {
+      "types": "./src/*.ts",
+      "default": "./dist/src/*.js"
+    },
+    "#test/*.js": {
+      "types": "./test/*.ts",
+      "default": "./dist/test/*.js"
+    }
+  }
+}

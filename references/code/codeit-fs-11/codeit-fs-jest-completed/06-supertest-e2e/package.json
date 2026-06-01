@@ -1,0 +1,44 @@
+{
+  "name": "@express-test/06-supertest-e2e",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#src/*.js": {
+      "types": "./src/*.ts",
+      "default": "./dist/src/*.js"
+    },
+    "#test/*.js": {
+      "types": "./test/*.ts",
+      "default": "./dist/test/*.js"
+    }
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "supertest": "^7.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.6.0",
+    "@types/supertest": "^6.0.3",
+    "cross-env": "^10.1.0",
+    "eslint": "^10.2.1",
+    "jest": "^30.3.0",
+    "prettier": "^3.8.3",
+    "ts-jest": "^29.4.9",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.0"
+  },
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.mjs --runInBand",
+    "test:cov": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --config ./jest.config.mjs --coverage --runInBand",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  }
+}

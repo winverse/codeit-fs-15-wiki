@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>이벤트와 버튼 클릭</title>
+    <style>
+      .liked {
+        color: red;
+      }
+      .block {
+        margin: 20px 0;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 좋아요 버튼 예제 -->
+    <div class="block">
+      <h3>1. 좋아요 버튼</h3>
+      <button id="likeBtn">❤️ 좋아요</button>
+      <p id="likeCount">좋아요 0개</p>
+    </div>
+
+    <!-- 2. 카운트 버튼 예제 -->
+    <div class="block">
+      <h3>2. 카운터 버튼</h3>
+      <button id="countBtn">클릭 횟수: 0</button>
+    </div>
+
+    <!-- 3. 이벤트 핸들러 예제 -->
+    <div class="block">
+      <h3>3. 제출 버튼</h3>
+      <button id="submitBtn">제출</button>
+    </div>
+
+    <!-- 4. 메시지 표시 예제 -->
+    <div class="block">
+      <h3>4. 메시지 표시</h3>
+      <button id="messageBtn">메시지 보기</button>
+      <p id="message"></p>
+    </div>
+
+    <!-- 5. 색상 변경 예제 -->
+    <div class="block">
+      <h3>5. 배경색 변경</h3>
+      <button id="colorBtn">배경색 변경</button>
+    </div>
+
+    <!-- 6. 토글 예제 -->
+    <div class="block">
+      <h3>6. 텍스트 토글</h3>
+      <button id="toggleBtn">상태: OFF</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+.page {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.page h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.page p {
+  color: #666;
+  line-height: 1.6;
+}

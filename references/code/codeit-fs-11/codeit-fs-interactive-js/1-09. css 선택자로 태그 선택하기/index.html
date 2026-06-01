@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS 선택자로 태그 선택하기</title>
+    <style>
+      .block {
+        margin: 20px 0;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. id 선택자 예제 -->
+    <div class="block">
+      <h3>1. id 선택자</h3>
+      <div id="main-title">메인 제목</div>
+    </div>
+
+    <!-- 2. class 선택자 예제 -->
+    <div class="block">
+      <h3>2. class 선택자</h3>
+      <div class="product">상품 1</div>
+      <div class="product">상품 2</div>
+      <div class="product">상품 3</div>
+    </div>
+
+    <!-- 3. 자식 선택자 예제 -->
+    <div class="block">
+      <h3>3. 자식 선택자</h3>
+      <div class="container">
+        <p>컨테이너 안의 문단</p>
+      </div>
+      <p>컨테이너 밖의 문단</p>
+    </div>
+
+    <!-- 4. 자손 선택자 예제 -->
+    <div class="block">
+      <h3>4. 자손 선택자</h3>
+      <div id="menu">
+        <ul>
+          <li>메뉴 1</li>
+          <li>메뉴 2</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5. 속성 선택자 예제 -->
+    <div class="block">
+      <h3>5. 속성 선택자</h3>
+      <input type="text" placeholder="이름" />
+      <input type="email" placeholder="이메일" />
+      <input type="password" placeholder="비밀번호" />
+    </div>
+
+    <!-- 6. 가상 클래스 선택자 예제 -->
+    <div class="block">
+      <h3>6. 가상 클래스 선택자</h3>
+      <ul>
+        <li>첫 번째</li>
+        <li>두 번째</li>
+        <li>세 번째</li>
+      </ul>
+    </div>
+
+    <!-- 7. 복합 선택자 예제 -->
+    <div class="block">
+      <h3>7. 복합 선택자</h3>
+      <button class="btn primary">저장</button>
+      <button class="btn secondary">취소</button>
+    </div>
+
+    <!-- 8. 실전 예제 -->
+    <div class="block">
+      <h3>8. 실전 예제: 쇼핑몰</h3>
+      <div id="app">
+        <h1 class="title">쇼핑몰</h1>
+        <div class="product-list">
+          <div class="product">
+            <h2>상품 A</h2>
+            <p class="price">10000원</p>
+          </div>
+          <div class="product">
+            <h2>상품 B</h2>
+            <p class="price">20000원</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

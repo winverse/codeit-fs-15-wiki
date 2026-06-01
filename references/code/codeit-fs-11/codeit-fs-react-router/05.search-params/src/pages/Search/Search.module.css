@@ -1,0 +1,30 @@
+.page {
+  text-align: center;
+  padding: 1rem;
+
+  h1, h2, h3 {
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    margin: 0.25rem 0;
+    color: #5b6770;
+  }
+
+  form {
+    display: inline-flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  input[type="search"] {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #e3e3ee;
+    border-radius: 6px;
+  }
+
+  hr {
+    margin: 1rem 0;
+  }
+}

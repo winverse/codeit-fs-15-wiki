@@ -1,0 +1,21 @@
+.container {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.message {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.subMessage {
+  font-size: 1rem;
+  color: #999;
+}

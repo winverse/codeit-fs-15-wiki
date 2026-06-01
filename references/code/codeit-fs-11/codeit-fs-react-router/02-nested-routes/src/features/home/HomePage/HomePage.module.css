@@ -1,0 +1,23 @@
+/* Shared page styling using CSS nesting */
+.page {
+  text-align: center; /* 가운데 정렬 */
+
+  h1,
+  h2,
+  h3 {
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    margin: 0;
+    color: #5b6770;
+  }
+
+  /* If a section-level nav exists inside a page (e.g., CommunityPage) */
+  nav {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+}

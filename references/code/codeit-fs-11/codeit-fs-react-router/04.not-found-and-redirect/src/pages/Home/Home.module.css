@@ -1,0 +1,27 @@
+.page {
+  text-align: center;
+  padding: 1rem;
+
+  h1, h2, h3 {
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    margin: 0.25rem 0;
+    color: #5b6770;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    list-style: none;
+  }
+
+  hr {
+    margin: 1rem 0;
+  }
+}

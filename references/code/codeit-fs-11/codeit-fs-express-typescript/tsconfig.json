@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "es2015", // 최신 문법 기준으로 타입을 해석합니다.
+    "module": "nodenext", // Node.js의 ESM/CJS 해석 규칙에 맞춰 모듈 형식을 읽습니다.
+    "moduleResolution": "nodenext", // import 경로를 Node.js 방식으로 해석합니다.
+    "strict": true, // null/undefined 포함 각종 느슨한 타입 허용을 막습니다.
+    "noEmit": true, // tsc가 JavaScript 파일을 만들지 않고 타입 검사만 하게 합니다.
+    "esModuleInterop": true, // CommonJS 패키지를 default import처럼 다루기 쉽게 만듭니다.
+    "skipLibCheck": true, // 외부 라이브러리 선언 파일 전체 검사는 건너뜁니다.
+    "experimentalDecorators": true, // `@injectable()` 같은 `@` 데코레이터 문법을 허용합니다.
+    "emitDecoratorMetadata": true, // DI에 필요한 타입 메타데이터를 런타임까지 남깁니다.
+    "types": [
+      "node", // Node.js 전역 타입(process, Buffer 등)을 포함합니다.
+    ],
+    "paths": {
+      "#generated/prisma/client.js": [
+        "./generated/prisma/client.ts"
+      ],
+      "#common": [
+        "./src/common/index.ts"
+      ],
+      "#config": [
+        "./src/config/index.ts"
+      ],
+      "#controllers": [
+        "./src/controllers/index.ts"
+      ],
+      "#db": [
+        "./src/db/index.ts"
+      ],
+      "#middlewares": [
+        "./src/middlewares/index.ts"
+      ],
+      "#providers": [
+        "./src/providers/index.ts"
+      ],
+      "#repositories": [
+        "./src/repositories/index.ts"
+      ],
+      "#services": [
+        "./src/services/index.ts"
+      ]
+    },
+  },
+  "include": [
+    "src/**/*", // 애플리케이션 소스 전체를 타입 검사에 포함합니다.
+    "prisma/**/*.ts", // Prisma 관련 TypeScript 파일도 함께 검사합니다.
+    "generated/**/*.ts", // Prisma generate 결과물도 타입 검사 범위에 포함합니다.
+    "prisma.config.ts", // Prisma 설정 파일도 같은 규칙으로 검사합니다.
+  ],
+}

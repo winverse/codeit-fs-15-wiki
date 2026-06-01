@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>input 태그 다루기</title>
+    <style>
+      .block {
+        margin: 20px 0;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 텍스트 입력 -->
+    <div class="block">
+      <h3>1. 텍스트 입력</h3>
+      <input
+        id="textInput"
+        type="text"
+        placeholder="텍스트 입력"
+      />
+    </div>
+
+    <!-- 2. 체크박스 -->
+    <div class="block">
+      <h3>2. 체크박스</h3>
+      <input id="checkInput" type="checkbox" />
+      동의합니다
+    </div>
+
+    <!-- 3. 셀렉트 박스 -->
+    <div class="block">
+      <h3>3. 셀렉트 박스</h3>
+      <select id="selectInput">
+        <option value="apple">사과</option>
+        <option value="banana">바나나</option>
+        <option value="orange">오렌지</option>
+      </select>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

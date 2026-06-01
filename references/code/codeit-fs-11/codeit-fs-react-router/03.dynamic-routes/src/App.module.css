@@ -1,0 +1,47 @@
+/* Converted from SCSS to CSS Module using modern CSS features (nesting, custom properties) */
+:root {
+  --bg: #f7f7fb;
+  --border: #e3e3ee;
+  --primary: #646cff;
+  --text: #213547;
+}
+
+.app {
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+
+  header {
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid var(--border);
+    display: flex; /* 헤더 컨테이너도 가운데 정렬 컨텍스트 제공 */
+    justify-content: center;
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: center; /* 가운데 정렬 */
+
+      a {
+        color: var(--primary);
+        font-weight: 600;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          /* Approximate a light primary background */
+          background: #eef0ff;
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto; /* 가운데 정렬 */
+    text-align: center; /* 컨텐츠 가운데 정렬 */
+  }
+}

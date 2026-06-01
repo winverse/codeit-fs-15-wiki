@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "rootDir": ".", // 추가
+    "outDir": "bin",
+    "target": "es2020",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "pretty": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./src/**/*.ts"], // 추가
+  "files": ["./src/index.ts"] // 수정
+}

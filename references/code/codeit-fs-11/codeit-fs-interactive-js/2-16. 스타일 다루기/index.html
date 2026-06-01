@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>스타일 다루기</title>
+    <style>
+      .block {
+        margin: 20px 0;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      .task {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      .task.done {
+        text-decoration: line-through;
+        background-color: #f0f0f0;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 스타일 다루기 예제 -->
+    <div class="block">
+      <h3>1. 할 일 목록</h3>
+      <div class="task">공부하기</div>
+      <div class="task item">운동하기</div>
+      <div class="task item done">책 읽기</div>
+    </div>
+
+    <!-- 2. 박스 스타일 예제 -->
+    <div class="block">
+      <h3>2. 박스 스타일</h3>
+      <div id="box">스타일 박스</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

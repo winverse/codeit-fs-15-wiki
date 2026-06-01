@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.32.1",
+  "scripts": {
+    "dev": "node --watch server.mjs",
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "@tinyhttp/app": "^3.0.6",
+    "@tinyhttp/cors": "^2.0.1",
+    "json-server": "^1.0.0-beta.3",
+    "lowdb": "^7.0.1"
+  }
+}

@@ -1,0 +1,127 @@
+/* Shared page and post styling using CSS Modules with modern CSS nesting */
+:root {
+  --bg: #f7f7fb;
+  --border: #e3e3ee;
+  --primary: #646cff;
+  --text: #213547;
+  --muted: #5b6770;
+  --card: #ffffff;
+}
+
+.page {
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+
+  /* Center content container */
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+  }
+
+  /* Post list: vertical stack (one column) */
+  .postList {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .postCard {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: left;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .title {
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .excerpt {
+      margin: 0 0 0.75rem;
+      color: var(--text);
+    }
+
+    .more {
+      color: var(--primary);
+      font-weight: 600;
+    }
+  }
+
+  /* Post detail */
+  .article {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: left;
+  }
+
+  .postHeader {
+    margin-bottom: 0.75rem;
+
+    .title {
+      margin: 0 0 0.25rem;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  }
+
+  .content {
+    margin: 0.75rem 0 1rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .tag {
+      font-size: 0.85rem;
+      background: #eef0ff;
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+    }
+  }
+
+  .backLink {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+}

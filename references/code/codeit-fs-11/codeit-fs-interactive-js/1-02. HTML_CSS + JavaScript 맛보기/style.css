@@ -1,0 +1,23 @@
+#price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+#quantity {
+  font-size: 48px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-buy {
+  background-color: #3498db;
+  color: white;
+}

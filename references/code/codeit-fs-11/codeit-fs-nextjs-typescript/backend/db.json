@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "id": "post-101",
+      "title": "TypeScript로 props를 먼저 고정해야 하는 이유",
+      "content": "컴포넌트의 입력이 자주 바뀌는 프로젝트에서는 props 타입을 먼저 정해 두는 편이 유지보수에 유리합니다.",
+      "authorId": "author-1"
+    },
+    {
+      "id": "post-102",
+      "title": "이벤트 객체도 타입을 확인하면서 다뤄야 합니다",
+      "content": "폼 입력과 제출 이벤트는 브라우저 API와 직접 연결되기 때문에 이벤트 타입을 명시하면 실수를 줄일 수 있습니다.",
+      "authorId": "author-2"
+    },
+    {
+      "id": "post-103",
+      "title": "useState 제네릭은 상태 설계 문서와 비슷합니다",
+      "content": "상태의 모양을 미리 선언하면 이후에 setState가 어떤 값을 받을 수 있는지 한눈에 드러납니다.",
+      "authorId": "author-3"
+    },
+    {
+      "id": "post-104",
+      "title": "useRef는 DOM 참조 외에도 값 저장에 자주 사용됩니다",
+      "content": "리렌더링과 무관하게 값을 유지해야 할 때는 useRef가 간단한 해결책이 됩니다.",
+      "authorId": "author-1"
+    },
+    {
+      "id": "post-105",
+      "title": "useParams는 URL 구조를 타입으로 좁혀 주는 도구입니다",
+      "content": "동적 라우트에서 어떤 파라미터가 들어오는지 타입으로 제한하면 상세 페이지 로직이 훨씬 안전해집니다.",
+      "authorId": "author-2"
+    },
+    {
+      "id": "post-106",
+      "title": "Context는 전역 상태를 숨기기보다 공유 경로를 드러냅니다",
+      "content": "Context를 쓰면 데이터를 어디서 공급하는지, 어떤 값이 공유되는지 구조를 읽기 쉬워집니다.",
+      "authorId": "author-4"
+    },
+    {
+      "id": "post-107",
+      "title": "TanStack Query는 서버 상태의 생명주기를 관리합니다",
+      "content": "조회, 캐시, 재요청, 로딩, 에러를 한 번에 다루기 때문에 원격 데이터를 직접 useState로 관리할 필요가 줄어듭니다.",
+      "authorId": "author-3"
+    },
+    {
+      "id": "post-108",
+      "title": "useMutation의 핵심은 mutate 인자 타입입니다",
+      "content": "어떤 입력을 받아서 어떤 데이터를 변경하는지 명확하게 정의하면 뮤테이션 함수가 훨씬 예측 가능해집니다.",
+      "authorId": "author-4"
+    },
+    {
+      "id": "post-109",
+      "title": "useInfiniteQuery는 페이지 누적 구조를 전제로 합니다",
+      "content": "다음 페이지를 이어 붙이는 구조를 이해하면 무한 스크롤과 더 보기 버튼을 같은 원리로 설명할 수 있습니다.",
+      "authorId": "author-1"
+    },
+    {
+      "id": "post-110",
+      "title": "react-hook-form은 폼 상태 보일러플레이트를 줄입니다",
+      "content": "입력값 추적과 검증 상태를 라이브러리가 맡기 때문에 화면 코드가 더 간결해집니다.",
+      "authorId": "author-2"
+    },
+    {
+      "id": "post-111",
+      "title": "Zustand는 작은 전역 상태부터 시작하기 좋습니다",
+      "content": "Context보다 설정이 가볍고 selector를 적극적으로 사용할 수 있어서 부록 실습 주제로 적합합니다.",
+      "authorId": "author-3"
+    }
+  ]
+}

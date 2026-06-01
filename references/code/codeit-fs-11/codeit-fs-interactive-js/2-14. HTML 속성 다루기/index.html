@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML 속성 다루기</title>
+    <style>
+      .block {
+        margin: 20px 0;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 이미지 속성 -->
+    <div class="block">
+      <h3>1. 이미지 속성</h3>
+      <img id="logo" src="logo.png" alt="로고" />
+    </div>
+
+    <!-- 2. 메뉴 속성 -->
+    <div class="block">
+      <h3>2. 메뉴 속성</h3>
+      <ul id="menu" class="nav-menu" custom-attr="test">
+        <li>홈</li>
+      </ul>
+    </div>
+
+    <!-- 3. 링크 속성 -->
+    <div class="block">
+      <h3>3. 링크 속성</h3>
+      <a id="link" href="https://old.com">링크</a>
+    </div>
+
+    <!-- 4. 박스 속성 -->
+    <div class="block">
+      <h3>4. 박스 속성</h3>
+      <div id="box" class="container large">박스</div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

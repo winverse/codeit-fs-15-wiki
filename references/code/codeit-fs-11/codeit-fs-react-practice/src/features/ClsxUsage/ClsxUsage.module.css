@@ -1,0 +1,113 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.goal {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.goalTitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.goalText {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.requirements {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+.requirements li {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+  padding-left: 10px;
+}
+
+.preview {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.previewTitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.previewBox {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.fileBox {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.fileHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.fileIcon {
+  font-size: 20px;
+}
+
+.fileName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filePath {
+  font-size: 14px;
+  color: #666;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  margin: 0;
+}
+
+.hint {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #856404;
+  line-height: 1.6;
+}

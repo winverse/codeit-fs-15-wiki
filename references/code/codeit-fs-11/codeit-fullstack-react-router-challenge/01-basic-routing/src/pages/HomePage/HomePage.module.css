@@ -1,0 +1,14 @@
+/* Converted from SCSS to CSS Module (using nesting) */
+.page {
+  text-align: center; /* 가운데 정렬 */
+
+  h1 {
+    font-size: 2.2rem;
+    margin: 0 0 0.75rem;
+  }
+
+  p {
+    margin: 0;
+    color: #5b6770;
+  }
+}

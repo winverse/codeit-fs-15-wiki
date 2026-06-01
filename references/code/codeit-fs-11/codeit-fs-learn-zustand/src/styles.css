@@ -1,0 +1,109 @@
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #fafafa;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 16px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btnPrimary {
+  border-color: #111;
+  background: #111;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.itemTitle {
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.muted {
+  color: #666;
+  font-size: 14px;
+}
+.hr {
+  height: 1px;
+  background: #eee;
+  margin: 12px 0;
+}
+
+/* ✅ 수량 컨트롤이 항상 가운데 유지되도록 grid 배치 */
+.cartRow {
+  display: grid;
+  grid-template-columns: 1fr 220px 90px;
+  align-items: center;
+  gap: 12px;
+}
+.qty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.qtyNumber {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.small {
+  font-size: 13px;
+}

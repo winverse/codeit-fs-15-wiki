@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>이벤트 버블링</title>
+    <style>
+      .block {
+        margin: 20px 0;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      #container {
+        padding: 20px;
+        background: #f0f0f0;
+      }
+      #box {
+        padding: 20px;
+        background: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 이벤트 버블링 예제 -->
+    <div class="block">
+      <h3>1. 이벤트 버블링</h3>
+      <div id="container">
+        container
+        <div id="box">
+          box
+          <button id="button">클릭</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

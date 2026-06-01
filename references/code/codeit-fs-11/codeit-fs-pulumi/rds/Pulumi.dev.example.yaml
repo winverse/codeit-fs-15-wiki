@@ -1,0 +1,4 @@
+config:
+  aws:region:
+  aws-foundations-rds:myIpCidr:
+  aws-foundations-rds:dbPassword:
