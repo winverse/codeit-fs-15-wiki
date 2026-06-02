@@ -1,0 +1,50 @@
+<svg width="860" height="340" viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif; fill: #222; }
+    .title { font-size: 22px; font-weight: 700; }
+    .desc { font-size: 13px; fill: #555; }
+    .label { font-size: 16px; font-weight: 700; }
+    .pill { font-size: 13px; }
+    .note { font-size: 12px; fill: #666; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <rect width="860" height="340" fill="#fff"/>
+  <text x="36" y="40" class="title">Union은 허용값 집합을 넓힙니다</text>
+  <text x="36" y="64" class="desc">기존 집합에 값을 더하면 후보 값이 늘어나고, 타입이 더 넓어집니다.</text>
+
+  <g transform="translate(56 108)">
+    <rect x="0" y="0" width="280" height="160" rx="18" fill="none" stroke="#222" stroke-width="1.8"/>
+    <text x="140" y="34" text-anchor="middle" class="label">ClothingSize</text>
+    <text x="140" y="56" text-anchor="middle" class="note">'S' | 'M' | 'L'</text>
+
+    <rect x="52" y="88" width="44" height="34" rx="10" fill="none" stroke="#222" stroke-width="1.5"/>
+    <rect x="118" y="88" width="44" height="34" rx="10" fill="none" stroke="#222" stroke-width="1.5"/>
+    <rect x="184" y="88" width="44" height="34" rx="10" fill="none" stroke="#222" stroke-width="1.5"/>
+    <text x="74" y="110" text-anchor="middle" class="pill">S</text>
+    <text x="140" y="110" text-anchor="middle" class="pill">M</text>
+    <text x="206" y="110" text-anchor="middle" class="pill">L</text>
+  </g>
+
+  <line x1="370" y1="188" x2="484" y2="188" stroke="#555" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="427" y="174" text-anchor="middle" class="note">'FREE' 추가</text>
+
+  <g transform="translate(524 108)">
+    <rect x="0" y="0" width="280" height="160" rx="18" fill="none" stroke="#222" stroke-width="1.8"/>
+    <text x="140" y="34" text-anchor="middle" class="label">ExtendedSize</text>
+    <text x="140" y="56" text-anchor="middle" class="note">ClothingSize | 'FREE'</text>
+
+    <rect x="24" y="88" width="44" height="34" rx="10" fill="none" stroke="#222" stroke-width="1.5"/>
+    <rect x="90" y="88" width="44" height="34" rx="10" fill="none" stroke="#222" stroke-width="1.5"/>
+    <rect x="156" y="88" width="44" height="34" rx="10" fill="none" stroke="#222" stroke-width="1.5"/>
+    <rect x="212" y="88" width="54" height="34" rx="10" fill="none" stroke="#222" stroke-width="1.5"/>
+    <text x="46" y="110" text-anchor="middle" class="pill">S</text>
+    <text x="112" y="110" text-anchor="middle" class="pill">M</text>
+    <text x="178" y="110" text-anchor="middle" class="pill">L</text>
+    <text x="239" y="110" text-anchor="middle" class="pill">FREE</text>
+  </g>
+</svg>
