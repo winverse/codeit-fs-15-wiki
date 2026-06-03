@@ -284,7 +284,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5311
 
 - 인코딩(Encoding)이란, 사람이 이해할 수 있는 문자, 데이터, 멀티미디어 등을 컴퓨터가 처리할 수 있는 형식(예: 0과 1로 이루어진 이진수, 또는 특정 규칙을 적용한 코드)으로 변환하는 과정이나 방법을 의미합니다.
 
----
 
 **예시 설명**
 
@@ -292,7 +291,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5311
     - 예) "A"라는 문자를 ASCII 코드(65)로, "가"라는 한글을 UTF-8(234 176 128) 등으로 변환
 - 파일 인코딩: 이미지를 JPG, 오디오를 MP3, 동영상을 MP4 등 특정 포맷으로 저장
 
----
 
 **어디에 쓰이나?**
 
@@ -300,14 +298,12 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5311
 - **데이터 전송**: 인터넷에서 문서, 파일, 데이터 송수신 시에도 인코딩 방식을 맞춰야 함
 - **웹 개발**: 브라우저가 한글, 영어, 특수기호 등 다양한 문자를 깨지지 않고 잘 보여주기 위해 문자 인코딩(UTF-8, EUC-KR 등)을 사용
 
----
 
 **인코딩과 암호화는 다르다!**
 
 - **인코딩**: 누구나 규칙만 알면 원래 데이터로 복원(디코딩)할 수 있음. 표현 방식의 표준화, 호환성이 목표
 - **암호화**: 보안이 목적, 임의의 키(key)가 없으면 풀 수 없음
 
----
 
 **한마디로 요약**
 
@@ -333,7 +329,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5311
 
 이 HTML 문서가 UTF-8 방식의 문자 인코딩을 사용한다는 의미이다.
 
----
 
 **좀 더 쉽게 설명하면**
 
@@ -342,7 +337,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5311
 - 브라우저는 이 태그를 보고 "이 문서를 읽을 때 글자를 어떻게 해석할지"에 대한 규칙을 확인한다.
 - 이 태그가 없거나 인코딩 방식이 맞지 않으면 한글, 특수문자, 이모지 등이 깨져서 "???", "ãƒ¼" 등 이상한 글자로 보이는 문제가 발생할 수 있다.
 
----
 
 **결론**
 
@@ -583,7 +577,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5314
 - 웹 페이지에서 **단락(Paragraph)**을 만들 때 사용하는 태그
 - 텍스트 내용을 구분하여 정리할 때 사용
 
----
 
 ### 2. 특징
 
@@ -996,7 +989,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<title>` 태그는 HTML 문서의 제목을 정의하며, 이 제목은 브라우저의 탭이나 즐겨찾기 목록에 표시됩니다.
 
 
----
 
 **문제 2. [기본]** 웹 페이지에 한글이 깨지지 않고 정상적으로 보이게 하려면 `<head>` 태그 안에 어떤 태그를 추가해야 하나요?
 
@@ -1012,7 +1004,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<meta charset="utf-8">`은 해당 HTML 문서가 UTF-8 문자 인코딩을 사용한다는 사실을 브라우저에 알려 주는 역할을 한다. UTF-8은 전 세계 대부분의 문자를 지원하므로 한글 깨짐 현상을 방지할 수 있다.
 
 
----
 
 **문제 3. [기본]** 페이지에서 가장 중요한 최상위 제목을 나타낼 때 사용하는 태그는 무엇인가요?
 
@@ -1028,7 +1019,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<h1>` 태그는 페이지에서 가장 중요한 제목(Heading 1)을 의미하며, 일반적으로 한 페이지에 한 번만 사용하는 것이 좋다.
 
 
----
 
 **문제 4. [기본]** 글의 단락(Paragraph)을 구분하기 위해 사용하는 태그는 무엇인가요?
 
@@ -1044,7 +1034,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<p>` 태그는 'Paragraph'의 약자로, 하나의 문단을 감싸는 데 사용됩니다. 브라우저는 `<p>` 태그 위아래로 약간의 여백을 주어 단락을 시각적으로 구분합니다.
 
 
----
 
 **문제 5. [기본]** 문단 내에서 줄바꿈을 하고 싶을 때 사용하는, 내용이 없는 빈 태그는 무엇인가요?
 
@@ -1060,7 +1049,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<br>` 태그는 'Line Break'의 약자로, 강제로 줄바꿈을 할 때 사용합니다. `<p>` 태그처럼 단락을 나누는 것이 아니라, 문장 내에서 줄만 바꿀 때 유용합니다.
 
 
----
 
 **문제 6. [기본]** 다른 웹 페이지로 이동하는 하이퍼링크를 만들 때 사용하는 태그와, 이동할 주소를 지정하는 속성의 올바른 조합은 무엇인가요?
 
@@ -1076,7 +1064,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<a>` (Anchor) 태그는 하이퍼링크를 생성합니다. `href`(Hypertext Reference) 속성에는 클릭했을 때 이동할 URL 주소를 값으로 넣어줍니다.
 
 
----
 
 **문제 7. [중급]** 웹 페이지에 이미지를 삽입할 때 사용하는 태그와, 이미지 파일의 경로를 지정하는 속성의 올바른 조합은 무엇인가요?
 
@@ -1092,7 +1079,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<img>` (Image) 태그는 이미지를 삽입합니다. `src` (Source) 속성에는 이미지 파일의 경로(URL 또는 로컬 경로)를 값으로 넣어줍니다.
 
 
----
 
 **문제 8. [중급]** HTML 코드에서 `<p>` 태그 안에 실제 꺾쇠 기호(<, >)를 그대로 표시하고 싶을 때 올바른 방법은 무엇인가요?
 
@@ -1108,7 +1094,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: HTML에서는 꺾쇠 기호를 태그로 인식하기 때문에, 문자 그대로의 꺾쇠를 표시하려면 각각 `&lt;` (less than)와 `&gt;` (greater than)라는 특수 문자(Entity)를 사용해야 합니다.
 
 
----
 
 **문제 9. [중급]** 여러 HTML 요소들을 하나의 블록(block)으로 묶어 영역을 나눌 때 주로 사용하는, 그 자체로는 아무 의미나 스타일이 없는 태그는 무엇인가요?
 
@@ -1124,7 +1109,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<div>`(Division) 태그는 여러 요소를 그룹으로 묶어 CSS로 스타일을 적용하거나 자바스크립트로 제어하기 위한 영역을 만드는 데 사용되는 대표적인 블록 레벨 컨테이너이다.
 
 
----
 
 **문제 10. [중급]** `<div>`와 `<span>` 태그의 주된 차이점은 무엇인가요?
 
@@ -1140,7 +1124,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<div>`는 블록(block) 요소로, 사용하면 줄바꿈이 일어나며 가로 전체 너비를 차지한다. 반면 `<span>`은 인라인(inline) 요소로, 줄바꿈 없이 텍스트나 다른 인라인 요소의 일부를 감싸는 데 사용된다.
 
 
----
 
 **문제 11. [심화]** HTML 파일의 맨 위에 `<!DOCTYPE html>`을 작성하는 주된 이유는 무엇인가요?
 
@@ -1156,7 +1139,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5326
     해설: `<!DOCTYPE html>`은 브라우저가 문서를 최신 HTML 표준에 맞게 해석하도록 알려 주는 선언이다. 화면에 직접 표시되는 태그는 아니지만, HTML 문서의 기본 구조를 시작할 때 가장 먼저 작성한다.
 
 
----
 
 **문제 12. [심화]** `<a href="https://www.codeit.kr">코드잇</a>`에서 `href`의 역할로 가장 올바른 것은 무엇인가요?
 
@@ -2114,7 +2096,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `style` 속성을 사용하면 HTML 태그 안에 직접 CSS 코드를 작성하여 스타일을 적용할 수 있다. 이를 '인라인 스타일'이라고 한다.
 
 
----
 
 **문제 2. [기본]** 요소의 배경색은 `purple`로, 글자색은 `white`로 지정하려고 합니다. 올바른 CSS 속성 조합은 무엇인가요?
 
@@ -2130,7 +2111,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: 배경색을 지정할 때는 `background-color` 속성을, 글자색을 지정할 때는 `color` 속성을 사용한다. 두 가지 이상의 속성을 함께 사용할 때는 세미콜론(`;`)으로 구분한다.
 
 
----
 
 **문제 3. [기본]** `font-family` 속성에 `font-family: 'Helvetica', 'Arial', sans-serif;` 와 같이 여러 글꼴을 지정하는 이유는 무엇인가요?
 
@@ -2146,7 +2126,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `font-family`는 앞에서부터 순서대로 글꼴을 확인하여, 사용자의 컴퓨터에 설치된 첫 번째 글꼴을 적용한다. 앞 순서의 글꼴이 없다면 다음 순서의 글꼴을 확인하는 방식으로 동작한다.
 
 
----
 
 **문제 4. [기본]** 구글 폰트와 같은 웹 폰트를 페이지에 적용하려고 합니다. HTML 문서의 `<head>` 태그 안에 추가해야 하는 태그는 무엇인가요?
 
@@ -2162,7 +2141,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `<link>` 태그는 현재 문서와 외부 리소스(stylesheet, icon 등)를 연결하는 데 사용된다. 구글 폰트에서 제공하는 CSS 파일을 연결하여 웹 폰트를 불러올 수 있다.
 
 
----
 
 **문제 5. [기본]** 글자의 크기를 24px로, 글자의 굵기를 700 (bold)으로 지정하는 올바른 CSS 속성 조합은 무엇인가요?
 
@@ -2178,7 +2156,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `font-size`는 글자의 크기를, `font-weight`는 글자의 굵기를 지정하는 속성이다.
 
 
----
 
 **문제 6. [기본]** 요소의 너비를 부모 요소의 50%로 설정하고, 높이를 300px로 고정하려고 합니다. 올바른 CSS 코드는 무엇인가요?
 
@@ -2194,7 +2171,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: 너비나 높이를 설정할 때 `px`은 고정된 픽셀 값을, `%`는 부모 요소를 기준으로 한 상대적인 비율을 의미합니다.
 
 
----
 
 **문제 7. [중급]** CSS의 `padding`과 `margin` 속성에 대한 설명으로 가장 올바른 것은 무엇인가요?
 
@@ -2210,7 +2186,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `padding`은 요소의 테두리(border)를 기준으로 안쪽 공간을 만들고, `margin`은 테두리를 기준으로 바깥 공간을 만들어 다른 요소와의 간격을 조정합니다.
 
 
----
 
 **문제 8. [중급]** 너비가 500px인 `<div>` 요소를 부모 요소의 가운데로 수평 정렬하는 가장 일반적인 방법은 무엇인가요?
 
@@ -2226,7 +2201,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `margin: 0 auto;`는 위아래 바깥 여백을 0으로 설정하고, 좌우 바깥 여백을 `auto`로 설정하여 브라우저가 사용 가능한 공간을 균등하게 배분하도록 만든다. 이 방법은 너비(width)가 지정된 블록 요소를 수평 중앙에 배치할 때 사용한다.
 
 
----
 
 **문제 9. [중급]** 텍스트를 가운데 정렬할 때 사용하는 CSS 속성과 값의 올바른 조합은 무엇인가요?
 
@@ -2242,7 +2216,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `text-align`은 텍스트와 인라인 콘텐츠의 정렬 방향을 지정하는 CSS 속성이다. `center` 값을 사용하면 해당 영역 안의 텍스트가 가운데로 정렬된다.
 
 
----
 
 **문제 10. [중급]** `padding: 40px 20px;`처럼 값을 두 개만 작성했을 때 적용 방식으로 올바른 것은 무엇인가요?
 
@@ -2258,7 +2231,6 @@ https://www.codeit.kr/topics/intro-to-web-publishing/lessons/5347
     해설: `padding`에 값을 두 개 작성하면 첫 번째 값은 위아래, 두 번째 값은 좌우 여백에 적용됩니다. 네 방향을 각각 다르게 지정할 때는 위, 오른쪽, 아래, 왼쪽 순서로 값을 네 개 작성합니다.
 
 
----
 
 **문제 11. [심화]** `font-family`에서 사용하는 `serif`와 `sans-serif`의 차이점에 대한 설명으로 올바른 것은 무엇일까요?
 
