@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notion Formatter"
+  short_description: "Format Codeit course Markdown for Notion"
+  default_prompt: "Use $notion-formatter to create the Notion-ready Markdown derivative for this Codeit course document."
