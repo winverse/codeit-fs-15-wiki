@@ -10,7 +10,8 @@
 - 페이지 내용을 수정할 때는 로컬 원본 Markdown과 Notion 페이지 중 어느 쪽이 기준본인지 먼저 확인합니다.
 - 이 레포의 15기 강의자료 기준본은 `courses/` 아래 Markdown입니다. Notion 페이지는 업로드/검토 대상입니다.
 - Notion 반영은 사용자의 명시 요청이 있을 때만 진행합니다.
-- Notion 반영 시에는 기존 페이지 내용을 archive 처리하고 formatter로 생성한 `_notion.md`를 통째로 다시 올리는 `replace` 방식을 사용합니다.
+- Notion 반영은 기본적으로 필요한 블록만 부분 수정합니다.
+- 기존 페이지 내용을 archive 처리하고 formatter로 생성한 `_notion.md`를 통째로 다시 올리는 `replace` 방식은 사용자가 전체 교체를 명시적으로 요청한 경우에만 사용합니다.
 
 ## 기본 접근 절차
 
@@ -96,7 +97,7 @@ https://lightning-tree-8ec.notion.site/01-3731831f3e9080a0b9e1f8a3a6d2d15c
 - URL: `https://www.notion.so/02-3731831f3e9080ad9117e9d144b3e3bb`
 - 로컬 기준본: `courses/02.웹 퍼블리싱 시작하기/강의자료.md`
 - 업로드용 파생본: `courses/02.웹 퍼블리싱 시작하기/강의자료_notion.md`
-- 업로드 방식: 기존 top-level block archive 후 전체 교체
+- 업로드 방식: 기존 top-level block archive 후 전체 교체. 이 방식은 현재 기준에서는 사용자가 전체 교체를 명시적으로 요청한 경우에만 사용합니다.
 - 업로드 결과:
   - archived: 65
   - topCreated: 77
