@@ -8,7 +8,8 @@ These rules are based on the `codeit-fs-javascript` Notion formatting records.
 - Create Notion import Markdown as a derivative file.
 - Use `_notion` or an equivalent suffix for Notion files.
 - Treat Notion formatting as structural conversion, not content editing.
-- When publishing through the Notion API, use the formatter-generated `_notion.md` file and replace existing page content by default.
+- Prefer targeted Notion block updates for narrow changes.
+- When the user explicitly asks for a whole-page replacement through the Notion API, use the formatter-generated `_notion.md` file and pass `--replace`.
 - Keep Markdown heading depth to `#`, `##`, `###`, and `####`.
 - Use `# N장: 제목` for chapter headings.
 - Use `## N-XX 제목` or `## N-XX. 제목` for section headings.

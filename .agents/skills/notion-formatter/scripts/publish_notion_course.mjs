@@ -30,7 +30,8 @@ function printHelp() {
 Options:
   --input <path>                 Source Markdown file. A positional path also works.
   --page-id <id>                 Notion page ID or Notion page URL.
-  --replace                      Archive existing top-level page blocks before upload.
+  --replace                      Explicitly archive existing top-level page blocks before upload.
+  --append                       Explicitly append generated blocks without archiving existing content.
   --heading3-toggles             Convert "### NN. ..." headings into toggleable heading_3 blocks. Default: on.
   --no-heading3-toggles          Keep "### NN. ..." headings as normal heading_3 blocks.
   --quiz-toggle-label <text>     Label for quiz answer toggles. Default: 정답 및 해설.
@@ -48,6 +49,7 @@ function parseArgs(argv) {
     input: "",
     pageId: "",
     replace: false,
+    append: false,
     heading3Toggles: true,
     quizToggleLabel: DEFAULT_QUIZ_TOGGLE_LABEL,
     imageMode: "github-raw",
@@ -64,6 +66,7 @@ function parseArgs(argv) {
     else if (arg === "--input" || arg === "-i") options.input = argv[++index] ?? "";
     else if (arg === "--page-id") options.pageId = argv[++index] ?? "";
     else if (arg === "--replace") options.replace = true;
+    else if (arg === "--append") options.append = true;
     else if (arg === "--heading3-toggles") options.heading3Toggles = true;
     else if (arg === "--no-heading3-toggles") options.heading3Toggles = false;
     else if (arg === "--quiz-toggle-label") options.quizToggleLabel = argv[++index] ?? "";
@@ -79,6 +82,9 @@ function parseArgs(argv) {
   if (!options.input && positional.length > 0) options.input = positional[0];
   if (!["github-raw", "file-upload", "external", "placeholder"].includes(options.imageMode)) {
     throw new Error("--image-mode must be one of: github-raw, file-upload, external, placeholder");
+  }
+  if (options.replace && options.append) {
+    throw new Error("--replace and --append cannot be used together.");
   }
   if (!Number.isInteger(options.archiveConcurrency) || options.archiveConcurrency < 1) {
     throw new Error("--archive-concurrency must be a positive integer");
@@ -1319,6 +1325,8 @@ function main() {
     pageId: options.pageId,
     dryRun: options.dryRun,
     replace: options.replace,
+    append: options.append,
+    publishMode: options.replace ? "replace" : options.append ? "append" : "plan-only",
     heading3Toggles: options.heading3Toggles,
     quizToggleLabel: options.quizToggleLabel,
     imageMode: options.imageMode,
@@ -1340,6 +1348,9 @@ function main() {
   if (options.dryRun) {
     console.log(JSON.stringify({ plan }, null, 2));
     return;
+  }
+  if (!options.replace && !options.append) {
+    throw new Error("Missing publish mode. Use --dry-run for a plan, --replace for explicit whole-page replacement, or --append for explicit append.");
   }
 
   publish(options, context, units)

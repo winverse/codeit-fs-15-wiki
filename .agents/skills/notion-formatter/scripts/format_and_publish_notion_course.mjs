@@ -12,8 +12,9 @@ Options:
   --input <path>                 Source Markdown file. A positional path also works.
   --output <path>                Formatter output. Default: <source>_notion.md
   --page-id <id-or-url>          Notion page ID or Notion page URL.
-  --replace                      Replace existing page content. Default: on.
-  --no-replace                   Append instead of replacing.
+  --replace                      Explicitly replace existing page content.
+  --append                       Explicitly append generated content without replacing.
+  --no-replace                   Deprecated alias for --append.
   --no-heading3-toggles          Keep "### NN. ..." headings as normal heading_3 blocks.
   --quiz-toggle-label <text>     Label for quiz answer toggles. Default: 정답 및 해설.
   --image-mode <mode>            github-raw | file-upload | external | placeholder. Default: github-raw.
@@ -30,7 +31,8 @@ function parseArgs(argv) {
     input: "",
     output: "",
     pageId: "",
-    replace: true,
+    replace: false,
+    append: false,
     heading3Toggles: true,
     quizToggleLabel: "정답 및 해설",
     imageMode: "github-raw",
@@ -48,7 +50,8 @@ function parseArgs(argv) {
     else if (arg === "--output" || arg === "-o") options.output = argv[++index] ?? "";
     else if (arg === "--page-id") options.pageId = argv[++index] ?? "";
     else if (arg === "--replace") options.replace = true;
-    else if (arg === "--no-replace") options.replace = false;
+    else if (arg === "--append") options.append = true;
+    else if (arg === "--no-replace") options.append = true;
     else if (arg === "--heading3-toggles") options.heading3Toggles = true;
     else if (arg === "--no-heading3-toggles") options.heading3Toggles = false;
     else if (arg === "--quiz-toggle-label") options.quizToggleLabel = argv[++index] ?? "";
@@ -84,6 +87,10 @@ function main() {
   }
   if (!options.input) throw new Error("Missing --input <source.md>.");
   if (!options.pageId) throw new Error("Missing --page-id <notion-page-id>.");
+  if (options.replace && options.append) throw new Error("--replace and --append cannot be used together.");
+  if (!options.dryRun && !options.replace && !options.append) {
+    throw new Error("Missing publish mode. Use --dry-run for a plan, --replace for explicit whole-page replacement, or --append for explicit append.");
+  }
 
   const scriptDir = path.dirname(fileURLToPath(import.meta.url));
   const formatterScript = path.join(scriptDir, "format_notion_markdown.mjs");
@@ -111,6 +118,7 @@ function main() {
   ];
 
   if (options.replace) publishArgs.push("--replace");
+  if (options.append) publishArgs.push("--append");
   if (!options.heading3Toggles) publishArgs.push("--no-heading3-toggles");
   if (options.githubRawBase) publishArgs.push("--github-raw-base", options.githubRawBase);
   if (!options.fileUpload) publishArgs.push("--no-file-upload");

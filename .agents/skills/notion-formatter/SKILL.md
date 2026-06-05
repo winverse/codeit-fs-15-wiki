@@ -54,23 +54,24 @@ This creates:
 
 ## Publish to Notion
 
-When publishing through Notion MCP/API, always publish a formatter-generated Markdown file. The source file remains the source of truth, but the upload path is:
+When publishing a whole generated document through Notion MCP/API, publish a formatter-generated Markdown file. The source file remains the source of truth, but the full-document upload path is:
 
 ```text
 source.md -> format_notion_markdown.mjs -> source_notion.md -> publish_notion_course.mjs -> Notion
 ```
 
-Use the bundled wrapper when a course Markdown file should replace an existing Notion page:
+Use the bundled wrapper only when the user explicitly asks to replace an existing Notion page:
 
 ```bash
 node .agents/skills/notion-formatter/scripts/format_and_publish_notion_course.mjs \
   --input "courses/01.프로그래밍 시작하기/강의자료.md" \
-  --page-id "<notion-page-id-or-url>"
+  --page-id "<notion-page-id-or-url>" \
+  --replace
 ```
 
-The wrapper regenerates `_notion.md` first and then uploads that generated file. It replaces existing page content by default.
+The wrapper regenerates `_notion.md` first and then uploads that generated file. It does not replace existing page content unless `--replace` is explicitly passed.
 
-Use the lower-level publisher only when `_notion.md` already exists and should be uploaded directly:
+Use the lower-level publisher only when `_notion.md` already exists and the user explicitly asked for a whole-page publish:
 
 ```bash
 node .agents/skills/notion-formatter/scripts/publish_notion_course.mjs \
@@ -83,7 +84,7 @@ Course publisher defaults:
 
 - `##` headings stay as visible section headings.
 - `### NN. ...` headings become toggleable `heading_3` blocks.
-- Existing page content is replaced by default. The publisher archives/trashes current top-level blocks before uploading regenerated content.
+- Existing page content is not replaced by default. The publisher archives/trashes current top-level blocks only when `--replace` is explicitly passed.
 - Markdown blockquotes beginning with `>` are uploaded as Notion `quote` blocks so instructor script text keeps the visible left bar.
 - Markdown unordered list lines beginning with `-` or `*` are uploaded as Notion `bulleted_list_item` blocks, except quiz answer markers such as `- 정답 및 해설`.
 - Markdown ordered list lines beginning with `1.` or `1)` are uploaded as Notion `numbered_list_item` blocks.
