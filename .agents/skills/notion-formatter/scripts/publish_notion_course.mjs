@@ -278,10 +278,10 @@ function markdownRichText(content) {
     if (match.index > cursor) pushTextChunks(chunks, value.slice(cursor, match.index));
     if (match[2] != null) {
       const boldCode = match[2].match(/^`([^`]+)`$/);
-      if (boldCode) pushTextChunks(chunks, boldCode[1], INLINE_CODE_COLOR, { bold: true, code: true });
+      if (boldCode) pushTextChunks(chunks, boldCode[1], INLINE_CODE_COLOR, { code: true });
       else pushTextChunks(chunks, match[2], "default", { bold: true });
     }
-    else if (match[3] != null) pushTextChunks(chunks, match[3], INLINE_CODE_COLOR, { bold: true, code: true });
+    else if (match[3] != null) pushTextChunks(chunks, match[3], INLINE_CODE_COLOR, { code: true });
     cursor = match.index + match[0].length;
   }
 
@@ -1006,10 +1006,10 @@ function countInlineCodeAnnotations(blocks, counts = {}) {
       if (!text.annotations?.code) continue;
       counts.total = (counts.total || 0) + 1;
       const color = text.annotations.color || "default";
-      if (color === INLINE_CODE_COLOR && text.annotations.bold) {
-        counts.blueBold = (counts.blueBold || 0) + 1;
+      if (color === INLINE_CODE_COLOR && !text.annotations.bold) {
+        counts.blue = (counts.blue || 0) + 1;
       } else if (color === INLINE_CODE_COLOR) {
-        counts.blueNotBold = (counts.blueNotBold || 0) + 1;
+        counts.blueBold = (counts.blueBold || 0) + 1;
       } else {
         counts.other = (counts.other || 0) + 1;
       }

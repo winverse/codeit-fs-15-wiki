@@ -13,9 +13,11 @@ These rules are based on the `codeit-fs-javascript` Notion formatting records.
 - Keep Markdown heading depth to `#`, `##`, `###`, and `####`.
 - Use `# N장: 제목` for chapter headings.
 - Use `## N-XX 제목` or `## N-XX. 제목` for section headings.
+- Do not add Markdown backticks or inline code annotations to heading text. If a heading includes an HTML tag or code-like fragment, keep it as ordinary heading text.
 - Keep body heading structure by default. Do not wrap every `##` section in a toggle.
 - Convert `### NN. ...` course items into toggleable Notion `heading_3` blocks.
 - Upload Markdown blockquotes beginning with `>` as Notion `quote` blocks so the visible left bar is preserved.
+- Use Markdown blockquotes and Notion `quote` blocks only for `#스크립트` instructor speech. Do not use the visible left bar (`|`) for student-facing concept explanations, definitions, code explanations, or summaries.
 - Upload Markdown unordered list lines beginning with `-` or `*` as Notion `bulleted_list_item` blocks, except quiz answer markers such as `- 정답 및 해설`.
 - Upload Markdown ordered list lines beginning with `1.` or `1)` as Notion `numbered_list_item` blocks.
 - Preserve Markdown list indentation as nested Notion list children.
@@ -35,14 +37,16 @@ These rules are based on the `codeit-fs-javascript` Notion formatting records.
 
 - Source Markdown can keep lecture scripts inside fenced code blocks.
 - Source Markdown can keep lecture scripts as Markdown blockquotes when the expected Notion view should show the left quote bar.
+- Concept content outside `#스크립트` should be ordinary paragraphs, lists, or subheadings, not quote blocks.
 - When publishing to Notion, code fences inside a `#스크립트` section are not uploaded as code blocks.
 - Upload script fences as readable gray-background paragraphs.
 - Render `**bold**` inside script fences as Notion bold rich text.
 - Render inline backtick text inside script fences as Notion inline code.
 - Preserve real code examples outside `#스크립트` sections as Notion code blocks.
 - Prefer plain inline code such as `` `<title>` `` over nested bold inline code such as `` **`<title>`** ``. The publisher normalizes nested bold inline code to Notion inline code so visible backticks do not remain after upload.
-- Render Markdown inline code created with backticks as Notion inline code with text color `blue` and bold enabled.
-- Do not apply the inline-code blue and bold text rule to fenced code blocks.
+- Apply inline code styling only to non-heading explanatory content.
+- Render Markdown inline code created with backticks as Notion inline code with text color `blue` and no bold annotation.
+- Do not apply the inline-code blue-only text rule to fenced code blocks.
 
 ## Quiz Rule
 

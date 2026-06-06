@@ -7,8 +7,9 @@
 - Notion 페이지를 읽거나 수정할 때는 먼저 Notion MCP 연결 권한을 확인합니다.
 - 공개 `notion.site` 링크가 열리더라도 Notion MCP에서 같은 페이지를 읽을 수 있다는 뜻은 아닙니다.
 - Notion MCP 작업에는 공개 공유 URL보다 워크스페이스 내부 page ID를 우선 사용합니다.
-- 페이지 내용을 수정할 때는 로컬 원본 Markdown과 Notion 페이지 중 어느 쪽이 기준본인지 먼저 확인합니다.
-- 이 레포의 15기 강의자료 기준본은 `courses/` 아래 Markdown입니다. Notion 페이지는 업로드/검토 대상입니다.
+- 페이지 내용을 수정할 때는 해당 과정이 최초 Notion 업로드 전인지, 업로드 이후 섹션 교정 단계인지 먼저 확인합니다.
+- 최초 Notion 업로드 전에는 `courses/` 아래 Markdown이 기준 초안입니다.
+- 최초 Notion 업로드 이후에는 업로드된 Notion 페이지가 교정 대상입니다. 이 단계에서는 `courses/*/강의자료.md`를 갱신하지 않고 Notion MCP/API로 해당 섹션만 수정합니다.
 - Notion 반영은 사용자의 명시 요청이 있을 때만 진행합니다.
 - Notion 반영은 기본적으로 필요한 블록만 부분 수정합니다.
 - 기존 페이지 내용을 archive 처리하고 formatter로 생성한 `_notion.md`를 통째로 다시 올리는 `replace` 방식은 사용자가 전체 교체를 명시적으로 요청한 경우에만 사용합니다.
@@ -37,7 +38,7 @@
 ```
 
 4. fetch 결과에서 제목, URL, 본문 섹션, 토글, 퀴즈, 이미지, 파일 링크를 확인합니다.
-5. 수정이 필요하면 먼저 로컬 기준본인 `courses/` 문서를 고친 뒤, Notion 업로드용 문서를 다시 생성하거나 Notion 페이지 업데이트 절차를 따릅니다.
+5. 수정이 필요하면 작업 단계를 확인합니다. 최초 업로드 전이면 `courses/` 문서를 고친 뒤 Notion 업로드용 문서를 생성하고, 최초 업로드 이후이면 로컬 Markdown을 갱신하지 않고 Notion MCP/API로 해당 섹션 또는 블록만 수정합니다.
 
 ## 확인된 페이지
 
@@ -45,6 +46,7 @@
 | --- | --- | --- | --- | --- | --- |
 | 01 | 01. 프로그래밍 시작하기 | `28c2eda4-01c1-80ee-939f-efd75e0a5305` | `https://www.notion.so/28c2eda401c180ee939fefd75e0a5305` | 검색 및 본문 fetch 확인 | `courses/01.프로그래밍 시작하기/강의자료.md` |
 | 02 | 02. 웹 퍼블리싱 시작하기 | `3731831f-3e90-80ad-9117-e9d144b3e3bb` | `https://www.notion.so/02-3731831f3e9080ad9117e9d144b3e3bb` | API 전체 교체 업로드 확인 | `courses/02.웹 퍼블리싱 시작하기/강의자료.md` |
+| 03 | 03. CSS 핵심 개념 | `3761831f-3e90-8050-80d4-ebd8edc334c5` | `https://app.notion.com/p/03-CSS-3761831f3e90805080d4ebd8edc334c5` | API 전체 교체 업로드 및 본문 검증 확인 | `courses/03.CSS 핵심 개념/강의자료.md` |
 
 ## 01. 프로그래밍 시작하기 접근 결과
 
@@ -83,11 +85,11 @@ https://lightning-tree-8ec.notion.site/01-3731831f3e9080a0b9e1f8a3a6d2d15c
 
 현재 이 과정과 연결되는 로컬 파일은 다음과 같습니다.
 
-- 기준본: `courses/01.프로그래밍 시작하기/강의자료.md`
+- 최초 업로드 전 기준 초안: `courses/01.프로그래밍 시작하기/강의자료.md`
 - Notion 업로드용 파생본: `courses/01.프로그래밍 시작하기/강의자료_notion.md`
 - 원본 Notion export: `references/raw/notion/01.프로그래밍 시작하기/01 프로그래밍 시작하기 28c2eda401c180ee939fefd75e0a5305.md`
 
-내용을 고칠 때는 `_notion.md`나 Notion 페이지를 먼저 고치지 않고, `courses/01.프로그래밍 시작하기/강의자료.md`를 먼저 수정합니다.
+최초 업로드 전에는 `courses/01.프로그래밍 시작하기/강의자료.md`를 먼저 수정합니다. 최초 업로드 이후에는 Notion MCP/API로 업로드된 페이지의 해당 섹션만 수정하고, 로컬 Markdown은 갱신하지 않습니다.
 
 ## 02. 웹 퍼블리싱 시작하기 접근 결과
 
@@ -95,9 +97,9 @@ https://lightning-tree-8ec.notion.site/01-3731831f3e9080a0b9e1f8a3a6d2d15c
 
 - page ID: `3731831f-3e90-80ad-9117-e9d144b3e3bb`
 - URL: `https://www.notion.so/02-3731831f3e9080ad9117e9d144b3e3bb`
-- 로컬 기준본: `courses/02.웹 퍼블리싱 시작하기/강의자료.md`
+- 최초 업로드 전 로컬 기준 초안: `courses/02.웹 퍼블리싱 시작하기/강의자료.md`
 - 업로드용 파생본: `courses/02.웹 퍼블리싱 시작하기/강의자료_notion.md`
-- 업로드 방식: 기존 top-level block archive 후 전체 교체. 이 방식은 현재 기준에서는 사용자가 전체 교체를 명시적으로 요청한 경우에만 사용합니다.
+- 업로드 방식: 기존 top-level block archive 후 전체 교체. 최초 업로드 이후 이 방식은 사용자가 전체 교체를 명시적으로 요청한 경우에만 사용합니다.
 - 업로드 결과:
   - archived: 65
   - topCreated: 77
@@ -105,6 +107,26 @@ https://lightning-tree-8ec.notion.site/01-3731831f3e9080a0b9e1f8a3a6d2d15c
   - verifiedToggleHeading3: 72
   - image: 21
   - uploadedFiles: `완성된 코드.zip`, `thumbnails.zip`
+
+## 03. CSS 핵심 개념 접근 결과
+
+2026-06-05에 Notion API publisher로 아래 내용을 확인했습니다.
+
+- page ID: `3761831f-3e90-8050-80d4-ebd8edc334c5`
+- URL: `https://app.notion.com/p/03-CSS-3761831f3e90805080d4ebd8edc334c5`
+- 최초 업로드 전 로컬 기준 초안: `courses/03.CSS 핵심 개념/강의자료.md`
+- 업로드용 파생본: `courses/03.CSS 핵심 개념/강의자료_notion.md`
+- 업로드 방식: 기존 top-level block archive 후 전체 교체. 최초 업로드 이후 이 방식은 사용자가 전체 교체를 명시적으로 요청한 경우에만 사용합니다.
+- 주의: 이전에 검색 후보로 확인된 `2942eda4-01c1-8012-8dd3-fdd50b6d9220`는 같은 제목으로 보였지만 `Codeit FS 15기 MCP` Notion API 토큰에서 page/block 조회가 `object_not_found`로 실패했으므로 사용하지 않습니다.
+- 업로드 결과:
+  - archived: 1
+  - topCreated: 71
+  - nested sections: 65
+  - nested children: 550
+  - verifiedTopLevel: 71
+  - verifiedToggleHeading3: 65
+  - image: 73
+  - uploadedFiles: `1-03.아이디.zip`, `2-03.배경 이미지.zip`, `3-01.박스 모델.zip`, `4-01. 블록과 인라인.zip`, `5-01. CSS 선택자.zip`
 
 ## 이후 페이지 추가 규칙
 

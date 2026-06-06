@@ -1,11 +1,11 @@
 ---
 name: notion-formatter
-description: Repository-local skill for codeit-fs-15. Convert Markdown course documents into Notion import-ready Markdown and publish them through the Notion API. Use when the user asks for Notion 포맷터, 노션 포맷터, Notion용 md, _notion.md, Markdown import for Notion, quiz answer toggles, image upload markers, or Notion formatting checks for Codeit course materials.
+description: Repository-local skill for codeit-fs-15. Convert Markdown course documents into Notion import-ready Markdown and publish them through the Notion API. Use when the user asks for Notion 포맷터, 노션 포맷터, Notion용 md, _notion.md, Markdown import for Notion, quiz answer toggles, image upload markers, or Notion import/block-rendering checks. Do not use as the editorial standard for course content, prose, concept explanations, or pedagogical quality.
 ---
 
 # Notion Formatter
 
-Convert source Markdown into a separate Notion import file without changing the source document.
+Convert source Markdown into a separate Notion import file without changing the source document. Use this workflow for initial course upload or an explicitly requested whole-page replacement.
 
 This is a repository-local skill for `/Users/winverse/Desktop/codeit-fs-15`.
 
@@ -14,14 +14,24 @@ This is a repository-local skill for `/Users/winverse/Desktop/codeit-fs-15`.
 - Run commands from the repository root with `.agents/skills/notion-formatter/...` paths.
 - Keep formatter behavior changes in this repository unless the user explicitly asks for a global skill.
 
-## Source Rule
+## Scope Boundary
 
-Never treat the Notion file as the source of truth.
+This skill is a Notion conversion and publishing tool. It is not the source of truth for course content, prose, concept explanations, or pedagogical quality.
 
-- Edit content in the source file first, usually `교재/1_교재.md`, `textbook/textbook.md`, or the current course Markdown.
-- Generate a separate `_notion.md` file only when Notion import or upload is needed.
+- Use `docs/00. 문서 운영/강의자료 검토 및 업로드 절차.md` and `docs/00. 문서 운영/15기 강의자료 개선 기준.md` for student-facing content, tone, concept explanation, original-material preservation, and allowed edit scope.
+- Use this skill when generating `_notion.md`, checking Notion import formatting, publishing the first Notion version, or performing an explicitly requested whole-page replacement.
+- After a course has already been uploaded once, do not invoke this skill as an editorial standard for a single section. Read the relevant `docs/` criteria, then update only the requested Notion section/block through MCP/API.
+- For already-uploaded Notion sections, consult this skill only for Notion rendering details such as code block language, inline code annotations, quote block behavior, file/image upload behavior, or publisher command syntax.
+
+## Stage Rule
+
+Before the first Notion upload, treat the course Markdown as the draft source. After a course has been uploaded once, do not update `강의자료.md` for ordinary corrections; find the uploaded Notion section through MCP/API and update that section directly.
+
+- Before first upload, edit content in the source file first, usually `교재/1_교재.md`, `textbook/textbook.md`, or the current course Markdown.
+- Generate a separate `_notion.md` file only when initial Notion import/upload or an explicitly requested whole-page replacement is needed.
 - Use Notion formatting for structure only. Do not rewrite concepts, code, or prose during the formatting pass.
-- If content is wrong, fix the source Markdown and regenerate the Notion file.
+- Before first upload, if content is wrong, fix the source Markdown and regenerate the Notion file.
+- After first upload, if content is wrong, update only the relevant Notion section/block through MCP/API and leave local Markdown unchanged.
 - If only Notion import structure is wrong, fix the formatter or the `_notion.md` derivative.
 
 ## Quick Start
@@ -54,7 +64,7 @@ This creates:
 
 ## Publish to Notion
 
-When publishing a whole generated document through Notion MCP/API, publish a formatter-generated Markdown file. The source file remains the source of truth, but the full-document upload path is:
+When publishing a whole generated document through Notion MCP/API, publish a formatter-generated Markdown file. This path is for initial upload or an explicitly requested whole-page replacement:
 
 ```text
 source.md -> format_notion_markdown.mjs -> source_notion.md -> publish_notion_course.mjs -> Notion
@@ -69,7 +79,7 @@ node .agents/skills/notion-formatter/scripts/format_and_publish_notion_course.mj
   --replace
 ```
 
-The wrapper regenerates `_notion.md` first and then uploads that generated file. It does not replace existing page content unless `--replace` is explicitly passed.
+The wrapper regenerates `_notion.md` first and then uploads that generated file. It does not replace existing page content unless `--replace` is explicitly passed. After a course has already been uploaded once, prefer direct Notion MCP/API section updates over regenerating Markdown.
 
 Use the lower-level publisher only when `_notion.md` already exists and the user explicitly asked for a whole-page publish:
 
@@ -84,8 +94,10 @@ Course publisher defaults:
 
 - `##` headings stay as visible section headings.
 - `### NN. ...` headings become toggleable `heading_3` blocks.
+- Do not add Markdown backticks or inline code annotations to `##`, `###`, or `####` heading text. If a heading includes an HTML tag or code-like fragment, keep it as ordinary heading text.
 - Existing page content is not replaced by default. The publisher archives/trashes current top-level blocks only when `--replace` is explicitly passed.
 - Markdown blockquotes beginning with `>` are uploaded as Notion `quote` blocks so instructor script text keeps the visible left bar.
+- Do not use Markdown blockquotes or Notion `quote` blocks for non-script concept explanations. The visible left bar (`|`) is reserved for `#스크립트`; student-facing concepts should be paragraphs, lists, or subheadings.
 - Markdown unordered list lines beginning with `-` or `*` are uploaded as Notion `bulleted_list_item` blocks, except quiz answer markers such as `- 정답 및 해설`.
 - Markdown ordered list lines beginning with `1.` or `1)` are uploaded as Notion `numbered_list_item` blocks.
 - Indented Markdown list items are uploaded as nested Notion list children instead of flat paragraphs.
@@ -105,16 +117,18 @@ Script section rules:
 
 - Source Markdown may keep script text inside fenced code blocks for editing convenience.
 - Source Markdown may also keep instructor script text as Markdown blockquotes. These are uploaded as Notion quote blocks with the visible left bar.
+- Outside `#스크립트`, do not create quote blocks for conceptual explanations, definitions, code explanations, or summaries.
 - In `#스크립트` sections, fenced code blocks are uploaded as readable gray-background paragraphs, not Notion code blocks.
 - In uploaded script paragraphs, Markdown `**bold**` becomes Notion bold text and inline backtick text becomes Notion inline code.
 - Real code examples outside `#스크립트` sections remain Notion code blocks.
 
 Inline code rules:
 
+- Do not use inline code in headings. Apply inline code styling only to body text, lists, quotes, and other non-heading explanatory content.
 - Prefer plain inline code such as `` `<title>` `` instead of nested bold inline code such as `` **`<title>`** `` in source Markdown.
 - In Notion API publishing, nested bold inline code is normalized to inline code rich text so visible backticks do not remain in Notion.
-- Inline code created from Markdown backticks is uploaded as Notion inline code with text color `blue` and bold enabled.
-- This blue and bold text rule applies only to inline code, not fenced code blocks.
+- Inline code created from Markdown backticks is uploaded as Notion inline code with text color `blue` and no bold annotation.
+- This blue-only text rule applies only to inline code, not fenced code blocks.
 
 Quiz section rules:
 
